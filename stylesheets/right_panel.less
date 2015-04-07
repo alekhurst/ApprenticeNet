@@ -1,0 +1,104 @@
+@main-blue		: #268282;
+@dark-blue		: #1C4A4A;
+@light-blue     : #27A1A1;
+@lighter-blue   : #51C4C4;
+@background-grey : #E3E3E3;
+@text-grey      : #565656;
+
+#right-panel {
+	position: relative;
+	display: block;
+	float: left;
+	clear: none;
+	width: 880px;
+	height: 700px;
+	background-color: white;
+	border-radius: 15px;
+	padding: 60px;
+
+	#right-panel-profile-pic {
+		float: left;
+		width: 200px;
+		height: 200px;
+		margin: 0px 20px 0px 0px;
+	}
+	
+	#right-panel-description {
+		float: left;
+		margin: 0px 0px 0px 0px;
+		h3 {
+			font-weight: 300;
+			line-height: 8px;
+			color: @main-blue;
+		}
+		#right-panel-title {
+			font-size: 2em;
+		}
+		#right-panel-employer {
+			font-size: 1.6em;
+		}
+		#right-panel-dates {
+			font-size: 1.6em;
+		}
+		#right-panel-hours {
+			font-size: 1.6em;
+		}
+	}
+}
+
+.right-panel-module {
+	margin: 0px 0px 10px 0px;
+	float: left;
+	width: 370px;
+
+	h4 {
+		font-weight: 300;
+		line-height: 10px;
+		color: @text-grey;
+	}
+}
+
+.clear-float {
+	clear: left;
+	margin-right: 20px;
+}
+
+.right-panel-skills-module {
+	margin-left: -8px;
+
+	h4 {
+		margin-left: 8px;
+		margin-bottom: 15px;
+	}
+
+	div {
+		float: left;
+		background-color: #EDECEC;
+		padding: 5px 15px;
+		border-radius: 10px;
+		margin: 0px 0px 8px 8px;
+	}
+}
+
+#interested-button {
+	position: absolute; 
+	bottom: 20px;
+	right: 210px;
+	font-size: 1.3em;
+	padding: 10px 30px;
+	border-radius: 10px;
+}
+
+#not-interested-button {
+	background-color: #CCCCCB;
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 1.3em;
+	padding: 10px 30px;
+	border-radius: 10px;
+
+	&:hover {
+		background-color: #E0E0E0;
+	}
+}
