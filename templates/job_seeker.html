@@ -1,6 +1,10 @@
 <header>
 	<img id='header-logo' src='images/logo.png'>
-	<input type='text' id='top-selector' placeholder="Add tags for apprenticeships you'd like to see">
+	<input type='text' id='top-selector' ng-change='checkTagQuery( current_tag_query )' ng-model='current_tag_query' placeholder="Add tags for apprenticeships you'd like to see">
+  <div id='tags-container'>
+    <div class='active-tag' ng-repeat='tag in user.employee_tags track by $index'>{{ tag }}<span class='glyphicon glyphicon-remove' aria-hidden="true" ng-click='removeTag( $index )'></span></div>
+  </div>
+  <button id='add-tag-button' class='a-button' ng-show='show_add_tag_button' ng-click='addTag( current_tag_query )'>Add</button>
 	<span id='top-selector-icon' class="glyphicon glyphicon-search" aria-hidden="true"></span>
 	<button class='a-button' id='profile-button'><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
 	<nav>

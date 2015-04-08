@@ -59,6 +59,7 @@ header {
 		left: -250px;
 		margin: 15px 0 0 50%;
 		width: 500px;
+		z-index: 2;
 		background-color: @dark-blue;
 		border: none;
 		padding: 10px 10px 10px 47px;
@@ -68,13 +69,72 @@ header {
 		&:focus {
 			outline: none;
 		}
+		&:focus + #tags-container {
+			display: block;
+		}
+		&:hover + #tags-container {
+			display: block;
+		}
 	} #top-selector-icon {
+		z-index: 2;
 		position: absolute;
 		left: -242px;
 		margin: 28px 0px 0px 50%;
 		color: white;
 		font-size: 1.8em;
 	}
+
+	#add-tag-button {
+		position: absolute;
+		left: 186px;
+		margin: 23 0 0 50%;
+		padding: 7px 14px;
+		font-size: 1em;
+		border-radius: 10px;
+		z-index: 2;
+		background-color: white;
+		color: @dark-blue;
+
+		&:hover + #tags-container {
+			display: block;
+		}
+	}
+
+	#tags-container {
+		display: none;
+		z-index: 1;
+		position: absolute;
+		width: 500px;
+		left: -250px;
+		top: 50px;
+		margin: 0 0 0 50%;
+		background-color: @dark-blue;
+		border-radius: 0px 0px 15px 15px;
+		padding: 20px;
+
+		.active-tag {
+			float: left;
+			padding: 10px 20px;
+			background-color: @main-blue;
+			color: white;
+			font-size: 1.3em;
+			margin: 5px;
+			border-radius: 10px;
+
+			span {
+				display: none;
+			}
+			&:hover span {
+				display: inline;
+				margin-left: 10px;
+				cursor: pointer;
+			}
+		}
+
+		&:hover {
+			display: block;
+		}
+	} 
 
 	#profile-button {
 		float: right;

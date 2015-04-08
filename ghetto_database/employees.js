@@ -3,7 +3,7 @@ window.GhettoDatabase.employees = {
 	0 : {
 		employee_name : 'Alek Hurst',
 		employee_description : 'Web Developer',
-		tags : ['developer', 'web', 'javascript', 'HTML', 'CSS'],
+		employee_tags : ['Developer', 'Web', 'Javascript', 'HTML', 'CSS'],
 		modules : [
 			{
 				title : 'Ideal Apprenticeship',
@@ -56,7 +56,7 @@ window.GhettoDatabase.employees = {
 	1 : {
 		employee_name : 'Alek Hurst',
 		employee_description : 'Web Developer',
-		tags : ['developer', 'web', 'javascript', 'HTML', 'CSS'],
+		employee_tags : ['developer', 'web', 'javascript', 'HTML', 'CSS'],
 		modules : [
 			{
 				title : 'Ideal Apprenticeship',

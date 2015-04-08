@@ -8,6 +8,7 @@ ApprenticeNetApp.factory('EmployeeFactory', function($http) {
 	self.init = function(ghetto_db_id) {
 		self.employee_name = window.GhettoDatabase.employees[ghetto_db_id].employee_name;
 		self.employee_description = window.GhettoDatabase.employees[ghetto_db_id].employee_description;
+		self.employee_tags = window.GhettoDatabase.employees[ghetto_db_id].employee_tags;
 		self.modules = window.GhettoDatabase.employees[ghetto_db_id].modules;
 		return self;
 	} 
