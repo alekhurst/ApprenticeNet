@@ -2,9 +2,12 @@
   <head>
     <!-- Our CSS -->
   	<link rel="stylesheet/less" type="text/css" href="./stylesheets/main.less" />
-  	<link rel="stylesheet/less" type="text/css" href="./stylesheets/left_panel.less" />
-  	<link rel="stylesheet/less" type="text/css" href="./stylesheets/main.less" />
-  	<link rel="stylesheet/less" type="text/css" href="./stylesheets/right_panel.less" />
+  	<link rel="stylesheet/less" type="text/css" href="./stylesheets/seeker_left_panel.less" />
+  	<link rel="stylesheet/less" type="text/css" href="./stylesheets/seeker_right_panel.less" />
+    <link rel="stylesheet/less" type="text/css" href="./stylesheets/recruiter_left_panel.less" />
+    <link rel="stylesheet/less" type="text/css" href="./stylesheets/recruiter_right_panel.less" />
+    <link rel="stylesheet/less" type="text/css" href="./stylesheets/universal_left_panel.less" />
+    <link rel="stylesheet/less" type="text/css" href="./stylesheets/universal_right_panel.less" />
 
     <!-- CSS Libraries -->
   	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" rel="stylesheet" type="text/css">
@@ -17,14 +20,15 @@
   	<script src="./lib/less.js" type="text/javascript" data-log-level='0'></script>
 
     <!-- Ghetto Databse -->
-    <script src='./ghetto_database/employees.js'></script>
-    <script src='./ghetto_database/jobs.js'></script>
+    <script src='./ghetto_database/apprentices.js'></script>
+    <script src='./ghetto_database/apprenticeships.js'></script>
 
     <!-- Our Javascript -->
     <script src="./javascripts/app.js"></script>
-    <script src="./javascripts/employee_factory.js"></script>
-    <script src="./javascripts/job_factory.js"></script>
-    <script src="./javascripts/job_seeker_controller.js"></script>
+    <script src="./javascripts/apprentice_factory.js"></script>
+    <script src="./javascripts/apprenticeship_factory.js"></script>
+    <script src="./javascripts/seeker_controller.js"></script>
+    <script src="./javascripts/recruiter_controller.js"></script>
   </head>
   <body ng-app="ApprenticeNetApp" ng-view>
 

@@ -1,12 +1,12 @@
-ApprenticeNetApp.controller( 'JobSeekerController', [
-'EmployeeFactory',
-'JobFactory',
+ApprenticeNetApp.controller( 'SeekerController', [
+'ApprenticeFactory',
+'ApprenticeshipFactory',
 '$scope',
 '$routeParams',
 '$rootScope',
-function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
-	$scope.user = EmployeeFactory.init(0);
-	$scope.job = JobFactory.init(0);
+function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootScope ) {
+	$scope.left_panel = ApprenticeFactory.init(parseInt($routeParams.id));
+	$scope.right_panel = ApprenticeshipFactory.init(0);
 
 	/**
 	 * Called once per module from directive in left panel. Pulls a partial based 
@@ -14,7 +14,7 @@ function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
 	 * @param {Number} index
 	 */
 	$scope.initLeftModuleTemplate = function( index ) {
-		return './templates/left_panel_modules/' + $scope.user.modules[ index ].partial;
+		return './templates/left_panel_modules/' + $scope.left_panel.modules[ index ].partial;
 	}	
 
 	/**
@@ -23,7 +23,7 @@ function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
 	 * @param {Number} index
 	 */
 	$scope.initLeftModuleStyles = function( index ) {
-		return 'left-panel-' + $scope.user.modules[ index ].css_class;
+		return 'left-panel-' + $scope.left_panel.modules[ index ].css_class;
 	}
 
 	/**
@@ -32,7 +32,7 @@ function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
 	 * @param {Number} index
 	 */
 	$scope.initRightModuleTemplate = function( index ) {
-		return './templates/right_panel_modules/' + $scope.job.modules[ index ].partial;
+		return './templates/right_panel_modules/' + $scope.right_panel.modules[ index ].partial;
 	}	
 
 	/**
@@ -42,21 +42,21 @@ function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
 	 */
 	$scope.initRightModuleStyles = function( index ) {
 		if( index % 2 === 0 )
-			return 'clear-float right-panel-' + $scope.job.modules[ index ].css_class;
-		return 'right-panel-' + $scope.job.modules[ index ].css_class;
+			return 'clear-float right-panel-' + $scope.right_panel.modules[ index ].css_class;
+		return 'right-panel-' + $scope.right_panel.modules[ index ].css_class;
 	}
 
 	/**
-	 * Called when a user clicks interested or not interested on a job. Handles the
-	 * animation as well as gets another job
+	 * Called when a user clicks interested or not interested on an apprenticeship. 
+	 * Handles the animation as well as gets another apprenticeship
 	 */
-	$scope.makeJobDecision = function( decision ) {
-		$('#right-panel').children().not('#' + decision).fadeOut(400);	
+	$scope.makeApprenticeshipDecision = function( decision ) {
+		$('#right-panel-seeker').children().not('#' + decision).fadeOut(400);	
 		setTimeout( function() { 
-			$scope.job = JobFactory.init(1); 
+			$scope.right_panel = ApprenticeshipFactory.init(1); 
 			if(!$scope.$$progress)
 				$scope.$digest();
-			$('#right-panel').children().fadeIn(400);
+			$('#right-panel-seeker').children().fadeIn(400);
 		}, 400)
 	}
 
@@ -77,7 +77,7 @@ function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
 	 * @param {String} tag
 	 */
 	$scope.addTag = function( tag) {
-		$scope.user.employee_tags.unshift(tag);
+		$scope.left_panel.apprentice_tags.unshift(tag);
 		$scope.current_tag_query = '';
 		$scope.show_add_tag_button = false;
 	}
@@ -88,6 +88,6 @@ function( EmployeeFactory, JobFactory, $scope, $routeParams, $rootScope ) {
 	 * @param {Number} index
 	 */
 	$scope.removeTag = function( index ) {
-		$scope.user.employee_tags.splice(index, 1);
+		$scope.left_panel.apprentice_tags.splice(index, 1);
 	}
 }]);

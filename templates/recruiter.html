@@ -1,0 +1,37 @@
+<header>
+	<img id='header-logo' src='images/logo.png'>
+	<h1 id='top-selector-recruiter'>{{ left_panel.apprenticeship_name }}</h1>
+  <div id='other-apprenticeships-container'>
+    <h1 class='other-apprenticeships' ng-repeat='apprenticeship in user_apprenticeships' ng-click='changeCurrentApprenticeship( apprenticeship )'> {{ apprenticeship.apprenticeship_name }} </h1>
+  </div>
+  <button id='add-tag-button' class='a-button' ng-show='show_add_tag_button' ng-click='addTag( current_tag_query )'>Add</button>
+	<span id='top-selector-recruiter-icon' class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+	<button class='a-button' id='profile-button'><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+	<nav>
+		<button class='a-button' id='messages'><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></button>
+		<button class='a-button' id='matches'><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></button>
+		<button class='a-button' id='interested-in-you'><span class="glyphicon glyphicon-envelope" aria-hidden="true"></button>
+		<button class='a-button' id='other'><span class="glyphicon glyphicon-cog" aria-hidden="true"></button>
+	</nav>
+</header>
+<main>
+	<section id='left-panel-recruiter'>
+		<img id='left-panel-recruiter-profile-pic' ng-src=' {{ left_panel.profile_picture }} '>
+		<h4 id='left-panel-recruiter-name'>{{ left_panel.apprenticeship_name }}</h4>
+		<h4 class='left-panel-recruiter-description'>{{ left_panel.master_name }}</h4>
+		<h4 class='left-panel-recruiter-description'>{{ left_panel.dates }}</h4>
+		<h4 class='left-panel-recruiter-description'>{{ left_panel.hours }}</h4>
+		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='left-panel-module' ng-class='initLeftModuleStyles( module_number )' ng-include='initLeftModuleTemplate( module_number )' ></article> <!-- closure on module_number allows for usage in left panel module templates -->
+	</section>
+
+	<section id='right-panel-recruiter'>
+		<img id='right-panel-recruiter-profile-pic' ng-src=' {{ right_panel.profile_picture }} '>
+		<div id='right-panel-recruiter-description'>
+			<h3 id='right-panel-recruiter-name'>{{ right_panel.apprentice_name }}</h3>
+			<h3 id='right-panel-recruiter-description'>{{ right_panel.apprentice_description }}</h3>
+		</div>
+		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='right-panel-module' ng-class='initRightModuleStyles( module_number )' ng-include='initRightModuleTemplate( module_number )'></article> 
+		<button class='a-button' id='interested-button' ng-click='makeApprenticeDecision( "interested-button" )'>I'm interested</button>
+		<button class='a-button' id='not-interested-button' ng-click='makeApprenticeDecision( "not-interested-button" )'>Not interested</button>
+	</section>
+</main>

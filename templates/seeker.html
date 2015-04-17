@@ -1,0 +1,37 @@
+<header>
+	<img id='header-logo' src='images/logo.png'>
+	<input type='text' id='top-selector-seeker' ng-change='checkTagQuery( current_tag_query )' ng-model='current_tag_query' placeholder="Add tags for apprenticeships you'd like to see">
+  <div id='tags-container'>
+    <div class='active-tag' ng-repeat='tag in left_panel.apprentice_tags track by $index'>{{ tag }}<span class='glyphicon glyphicon-remove' aria-hidden="true" ng-click='removeTag( $index )'></span></div>
+  </div>
+  <button id='add-tag-button' class='a-button' ng-show='show_add_tag_button' ng-click='addTag( current_tag_query )'>Add</button>
+	<span id='top-selector-seeker-icon' class="glyphicon glyphicon-search" aria-hidden="true"></span>
+	<button class='a-button' id='profile-button'><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
+	<nav>
+		<button class='a-button' id='messages'><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></button>
+		<button class='a-button' id='matches'><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></button>
+		<button class='a-button' id='interested-in-you'><span class="glyphicon glyphicon-envelope" aria-hidden="true"></button>
+		<button class='a-button' id='other'><span class="glyphicon glyphicon-cog" aria-hidden="true"></button>
+	</nav>
+</header>
+<main>
+	<section id='left-panel-apprentice'>
+		<img id='left-panel-apprentice-pic' ng-src=' {{ left_panel.profile_picture }} '>
+		<h4 id='left-panel-apprentice-name'>{{ left_panel.apprentice_name }}</h4>
+		<h4 id='left-panel-apprentice-description'>{{ left_panel.apprentice_description }}</h4>
+		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='left-panel-module' ng-class='initLeftModuleStyles( module_number )' ng-include='initLeftModuleTemplate( module_number )' ></article> <!-- closure on module_number allows for usage in left panel module templates -->
+	</section>
+
+	<section id='right-panel-seeker'>
+		<img id='right-panel-seeker-profile-pic' ng-src=' {{ right_panel.profile_picture }} '>
+		<div id='right-panel-seeker-description'>
+			<h3 id='right-panel-seeker-title'>{{ right_panel.apprenticeship_name }}</h3>
+			<h3 id='right-panel-seeker-master'>{{ right_panel.master_name }}</h3>
+			<h3 id='right-panel-seeker-dates'>{{ right_panel.dates }}</h3>
+			<h3 id='right-panel-seeker-hours'>{{ right_panel.hours }}</h3>
+		</div>
+		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='right-panel-module' ng-class='initRightModuleStyles( module_number )' ng-include='initRightModuleTemplate( module_number )'></article> 
+		<button class='a-button' id='interested-button' ng-click='makeApprenticeshipDecision( "interested-button" )'>I'm interested</button>
+		<button class='a-button' id='not-interested-button' ng-click='makeApprenticeshipDecision( "not-interested-button" )'>Not interested</button>
+	</section>
+</main>
