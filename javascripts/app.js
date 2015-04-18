@@ -9,6 +9,7 @@ ApprenticeNetApp.config(function($routeProvider, $locationProvider) {
         .when('/m/:id', {
             templateUrl: './templates/recruiter.html',
             controller: 'RecruiterController',
+        })
         .otherwise({
             redirectTo: '/'
         });
