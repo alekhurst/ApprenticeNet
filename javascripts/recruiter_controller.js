@@ -54,7 +54,7 @@ function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootS
 	$scope.makeApprenticeDecision = function( decision ) {
 		$('#right-panel-recruiter').children().not('#' + decision).fadeOut(400);	
 		setTimeout( function() { 
-			$scope.right_panel = ApprenticeFactory.init(1); 
+			$scope.right_panel = ApprenticeFactory.init( $scope.right_panel.apprentice_id + 1 ); 
 			if(!$scope.$$progress)
 				$scope.$digest();
 			$('#right-panel-recruiter').children().fadeIn(400);

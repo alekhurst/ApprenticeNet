@@ -6,7 +6,7 @@ ApprenticeNetApp.controller( 'SeekerController', [
 '$rootScope',
 function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootScope ) {
 	$scope.left_panel = ApprenticeFactory.init(parseInt($routeParams.id));
-	$scope.right_panel = ApprenticeshipFactory.init(0);
+	$scope.right_panel = ApprenticeshipFactory.init(1);
 
 	/**
 	 * Called once per module from directive in left panel. Pulls a partial based 
@@ -53,7 +53,7 @@ function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootS
 	$scope.makeApprenticeshipDecision = function( decision ) {
 		$('#right-panel-seeker').children().not('#' + decision).fadeOut(400);	
 		setTimeout( function() { 
-			$scope.right_panel = ApprenticeshipFactory.init(1); 
+			$scope.right_panel = ApprenticeshipFactory.init( ++$scope.right_panel.apprenticeship_id ); 
 			if(!$scope.$$progress)
 				$scope.$digest();
 			$('#right-panel-seeker').children().fadeIn(400);

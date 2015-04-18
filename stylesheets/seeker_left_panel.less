@@ -9,10 +9,15 @@
 	display: block;
 	float: left;
 	clear: none;
-	width: 200px;
+	width: 230px;
 	height: 650px;
-	margin: 0px 40px 0px 0px;
-	overflow: scroll;
+	margin: 0px 10px 0px 0px;
+	padding: 0px 15px 0px 0px;
+	overflow: hidden;
+
+	&:hover {
+		overflow-y: scroll;
+	}
 
 	#left-panel-apprentice-pic {
 		float: left;
@@ -27,21 +32,27 @@
 		margin: 15px 0px 0px 0px;
 		color: @text-grey;
 		font-weight: 400;
-		font-size: 1.3em;
+		font-size: 1em;
 		line-height: 10px;
+		clear: none;
 	}
 
-	#left-panel-apprentice-description {
+	#left-panel-apprentice-subtitle {
 		float: left;
 		display: block;
-		margin: 5px 0 0 0;
-		max-width: 110px;
+		margin: 2px 0 0 0;
+		max-width: 120px;
 		color: @text-grey;
-		font-size: 1.1em;
+		font-size: 1em;
 		font-weight: 300;
 		line-height: 15px;
 	}
+
+	#left-panel-apprentice-description {
+		display: block;
+		float: left;
+		clear: both;
+		line-height: 17px;
+	}
 }
-
-
 

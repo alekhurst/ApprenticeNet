@@ -18,7 +18,8 @@
 	<section id='left-panel-apprentice'>
 		<img id='left-panel-apprentice-pic' ng-src=' {{ left_panel.profile_picture }} '>
 		<h4 id='left-panel-apprentice-name'>{{ left_panel.apprentice_name }}</h4>
-		<h4 id='left-panel-apprentice-description'>{{ left_panel.apprentice_description }}</h4>
+		<h4 id='left-panel-apprentice-subtitle'>{{ left_panel.apprentice_subtitle }}</h4>
+		<p id='left-panel-apprentice-description'>{{ left_panel.apprentice_description }}</p>
 		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='left-panel-module' ng-class='initLeftModuleStyles( module_number )' ng-include='initLeftModuleTemplate( module_number )' ></article> <!-- closure on module_number allows for usage in left panel module templates -->
 	</section>
 

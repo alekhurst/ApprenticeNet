@@ -26,9 +26,10 @@
 
 	<section id='right-panel-recruiter'>
 		<img id='right-panel-recruiter-profile-pic' ng-src=' {{ right_panel.profile_picture }} '>
-		<div id='right-panel-recruiter-description'>
+		<div id='right-panel-recruiter-primary-info'>
 			<h3 id='right-panel-recruiter-name'>{{ right_panel.apprentice_name }}</h3>
-			<h3 id='right-panel-recruiter-description'>{{ right_panel.apprentice_description }}</h3>
+			<h3 id='right-panel-recruiter-position'>{{ right_panel.apprentice_subtitle }}</h3>
+			<p id='right-panel-recruiter-description'>{{ right_panel.apprentice_description }}</p>
 		</div>
 		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='right-panel-module' ng-class='initRightModuleStyles( module_number )' ng-include='initRightModuleTemplate( module_number )'></article> 
 		<button class='a-button' id='interested-button' ng-click='makeApprenticeDecision( "interested-button" )'>I'm interested</button>
