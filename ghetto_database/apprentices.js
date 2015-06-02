@@ -60,7 +60,7 @@ window.GhettoDatabase.apprentices = [
 		apprentice_name : 'David Corral Lyons',
 		apprentice_subtitle : 'Aspiring Entrepreneur',
 		apprentice_description : 'I am an aspiring entrepreneur who would eventually like to have my own company. At the moment I have very good business and leadership skills.',
-		apprentice_tags : ['Entrepreneurship', 'English', 'Social Networking', 'Program Management'],
+		apprentice_tags : ['Entrepreneurship', 'Project Management', 'Social Engineering', 'Programming'],
 		profile_picture : './images/profile-david.png',
 		modules : [
 			{
@@ -68,7 +68,7 @@ window.GhettoDatabase.apprentices = [
 				partial : 'description.html',
 				css_class : 'description-module',
 				information : [
-					'Being very new to web development, I am not exactly sure what I want to do right now. My end goal is to be able to make apps and websites with the ideas that I have. I would like to be an apprentice for somebody who is involved with a startup.'
+					'I would like to grow my skills as a leader and learn how to embark on a career as an entrepreneur. I would like to learn rudementary technical skills so that I can implement the ideas that I have, but am not quite looking for a role as a developer.'
 				]
 			},
 			{
@@ -110,7 +110,7 @@ window.GhettoDatabase.apprentices = [
 				information : {
 					institution : 'Santa Clara University',
 					degree : 'Pursuing Bachelors of Science in Economics',
-					courses : 'Related Coursework: MATH 11, MATH 12, BUSN 1, ECON 23, ECON 25, ECON 192, ECON 121, BUSN 122',
+					courses : 'Related Coursework: ECON 11, MATH 12, BUSN 1, ECON 23, ECON 25, ECON 192, ECON 121, BUSN 122',
 				}
 			}
 		]

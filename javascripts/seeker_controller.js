@@ -6,7 +6,7 @@ ApprenticeNetApp.controller( 'SeekerController', [
 '$rootScope',
 function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootScope ) {
 	$scope.left_panel = ApprenticeFactory.init(parseInt($routeParams.id));
-	$scope.right_panel = ApprenticeshipFactory.init(1);
+	$scope.right_panel = ApprenticeshipFactory.init(0);
 
 	/**
 	 * Called once per module from directive in left panel. Pulls a partial based 

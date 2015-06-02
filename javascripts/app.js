@@ -11,6 +11,6 @@ ApprenticeNetApp.config(function($routeProvider, $locationProvider) {
             controller: 'RecruiterController',
         })
         .otherwise({
-            redirectTo: '/'
+            redirectTo: '/a/1'
         });
 });
