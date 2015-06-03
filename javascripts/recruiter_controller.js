@@ -8,6 +8,7 @@ function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootS
 	$scope.left_panel = ApprenticeshipFactory.init(parseInt($routeParams.id));
 	$scope.right_panel = ApprenticeFactory.init(0);
 	$scope.user_apprenticeships = ApprenticeshipFactory.getApprenticeshipsFromMaster( $scope.left_panel );
+	$scope.matched = false;
 
 	/**
 	 * Called once per module from directive in left panel. Pulls a partial based 
@@ -54,10 +55,21 @@ function( ApprenticeFactory, ApprenticeshipFactory, $scope, $routeParams, $rootS
 	$scope.makeApprenticeDecision = function( decision ) {
 		$('#right-panel-recruiter').children().not('#' + decision).fadeOut(400);	
 		setTimeout( function() { 
-			$scope.right_panel = ApprenticeFactory.init( $scope.right_panel.apprentice_id + 1 ); 
-			if(!$scope.$$progress)
-				$scope.$digest();
-			$('#right-panel-recruiter').children().fadeIn(400);
+			// decide whether to show next apprentice or to show matched popup
+			if( $scope.right_panel.apprentice_id === 2 ) {
+				console.log('here');
+				$scope.matched = true;
+				$('#matches').css('background-color','#EDAF42');
+				if(!$scope.$$progress)
+					$scope.$digest();
+
+
+			} else {
+				$scope.right_panel = ApprenticeFactory.init( $scope.right_panel.apprentice_id + 1 ); 
+				if(!$scope.$$progress)
+					$scope.$digest();
+				$('#right-panel-recruiter').children().fadeIn(400);
+			}
 		}, 400)
 	}
 

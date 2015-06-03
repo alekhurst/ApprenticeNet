@@ -1,0 +1,53 @@
+@main-blue		: #268282;
+@dark-blue		: #1C4A4A;
+@light-blue     : #27A1A1;
+@lighter-blue   : #51C4C4;
+@background-grey : #E3E3E3;
+@text-grey      : #565656;
+
+#recruiter-matched-notification {
+	position: relative;
+	display: block;
+	float: left;
+	clear: none;
+	width: 780px;
+	height: 650px;
+	background-color: white;
+	border-radius: 15px;
+	padding: 60px;
+	text-align: center;
+
+	h1 {
+		margin-top: 200px;
+		margin-bottom: 5px;
+		font-size: 25px;
+		font-weight: 300;
+		color: @main-blue;
+
+		span {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+	h4 {
+		margin-bottom: 20px;
+		font-weight: 300;
+		color: @main-blue;
+	}
+	#introduce-yourself-button {
+		font-size: 1.3em;
+		padding: 10px 30px;
+		border-radius: 10px;
+	}
+	
+	#keep-browsing-button {
+		background-color: #CCCCCB;
+		font-size: 1.3em;
+		padding: 10px 30px;
+		border-radius: 10px;
+
+		&:hover {
+			background-color: #E0E0E0;
+		}
+	}
+}

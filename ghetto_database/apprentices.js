@@ -56,7 +56,7 @@ window.GhettoDatabase.apprentices = [
 		]
 	},
 	{
-		apprentice_id : 1,
+		apprentice_id : 2,
 		apprentice_name : 'David Corral Lyons',
 		apprentice_subtitle : 'Aspiring Entrepreneur',
 		apprentice_description : 'I am an aspiring entrepreneur who would eventually like to have my own company. At the moment I have very good business and leadership skills.',
@@ -116,7 +116,7 @@ window.GhettoDatabase.apprentices = [
 		]
 	},
 	{
-		apprentice_id : 2,
+		apprentice_id : 1,
 		apprentice_name : 'Lejla Ahmetspahic',
 		apprentice_subtitle : 'Office Manager',
 		apprentice_description : 'I am currently a fourth year undergraduate student at Santa Clara University, pursuing a degree in marketing with a minor in English. With strong interpersonal skills and great interests in real estate, communications, public relations, and research, I am constantly seeking ways to fuse all these subjects together.',

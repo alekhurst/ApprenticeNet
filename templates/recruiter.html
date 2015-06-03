@@ -8,9 +8,9 @@
 	<span id='top-selector-recruiter-icon' class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
 	<button class='a-button' id='profile-button'><span class="glyphicon glyphicon-user" aria-hidden="true"></span></button>
 	<nav>
-		<button class='a-button' id='messages'><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></button>
-		<button class='a-button' id='matches'><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></button>
-		<button class='a-button' id='interested-in-you'><span class="glyphicon glyphicon-envelope" aria-hidden="true"></button>
+		<button class='a-button' id='matches'><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></button>
+		<button class='a-button' id='interested-in-you'><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></button>
+		<button class='a-button' id='messages'><span class="glyphicon glyphicon-envelope" aria-hidden="true"></button>
 		<button class='a-button' id='other'><span class="glyphicon glyphicon-cog" aria-hidden="true"></button>
 	</nav>
 </header>
@@ -24,7 +24,7 @@
 		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='left-panel-module' ng-class='initLeftModuleStyles( module_number )' ng-include='initLeftModuleTemplate( module_number )' ></article> <!-- closure on module_number allows for usage in left panel module templates -->
 	</section>
 
-	<section id='right-panel-recruiter'>
+	<section id='right-panel-recruiter' ng-hide='matched'>
 		<img id='right-panel-recruiter-profile-pic' ng-src=' {{ right_panel.profile_picture }} '>
 		<div id='right-panel-recruiter-primary-info'>
 			<h3 id='right-panel-recruiter-name'>{{ right_panel.apprentice_name }}</h3>
@@ -34,5 +34,12 @@
 		<article ng-repeat='module_number in [ 0, 1, 2, 3 ]' class='right-panel-module' ng-class='initRightModuleStyles( module_number )' ng-include='initRightModuleTemplate( module_number )'></article> 
 		<button class='a-button' id='interested-button' ng-click='makeApprenticeDecision( "interested-button" )'>I'm interested</button>
 		<button class='a-button' id='not-interested-button' ng-click='makeApprenticeDecision( "not-interested-button" )'>Not interested</button>
+	</section>
+
+	<section id='recruiter-matched-notification' ng-show='matched'>
+		<h1>Your perfect apprentice could be <span>David Corral Lyons!</span></h1>
+		<h4>(You both clicked "I'm interested" on each others profiles)</h4>
+		<button id='introduce-yourself-button' class='a-button'>Introduce Yourself!</button>
+		<button id='keep-browsing-button' class='a-button'>Keep Browsing</button>
 	</section>
 </main>
